@@ -1,11 +1,14 @@
-pipeline{
-agent{ {docker image 'mysql'}}
-
-stages{ stage('running'){steps{
-       echo "running mysql"
-}  }   
-     
- }
-
-
+pipeline {
+    agent {
+        docker {
+            image 'mysql'
+        }
+    }
+    stages {
+        stage('running') {
+            steps {
+                echo "running mysql"
+            }
+        }
+    }
 }
